@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Mónica Jangada</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" href="imagem_perfil.jpg" type="image/jpg">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0 0 50px 0;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            background-color: #333;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar-brand {
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-brand:hover {
+            color: #ff4500;
+        }
+
+        .navbar-toggler {
+            border: none;
+            outline: none;
+        }
+
+        .navbar-toggler-icon {
+            background-color: #fff;
+            border-radius: 2px;
+        }
+
+        .navbar-toggler:focus .navbar-toggler-icon {
+            box-shadow: 0 0 0 0.2rem rgba(255, 69, 0, 0.25);
+        }
+
+        .navbar-nav {
+            margin-left: auto;
+        }
+
+        .nav-item {
+            margin-left: 20px;
+            position: relative; /* Necessário para posicionar o menu suspenso */
+        }
+
+        .nav-link {
+            color: #fff;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #ff4500;
+        }
+
+        .dropdown-menu {
+            display: none; /* Inicialmente escondido */
+            position: absolute;
+            top: 100%; /* Posiciona o menu abaixo do item */
+            left: 0;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 150px; /* Largura do menu */
+            z-index: 1000; /* Garante que o menu esteja acima de outros elementos */
+        }
+
+        .dropdown-menu.show {
+            display: block;
+        }
+
+        .dropdown-menu a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #f0f0f0;
+        }
+
+        .dropdown-toggle::after {
+            content: '▼'; /* Adiciona uma seta para baixo */
+            margin-left: 5px;
+        }
+
+        header {
+            margin-top: 70px; /* Espaço para a navbar */
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center; /* Centraliza as imagens horizontalmente */
+            padding: 20px;
+        }
+
+        .image-container {
+            width: auto; /* Largura automática */
+            height: 420px; /* Altura fixa para todas as imagens e descrição */
+            text-align: center; /* Centraliza a descrição abaixo da imagem */
+        }
+
+        .image {
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            height: 400px; /* Altura fixa para todas as imagens */
+        }
+
+        .image img {
+            width: 100%;
+            height: 100%; /* Ajusta a altura da imagem para preencher o contêiner */
+            object-fit: cover; /* Mantém a proporção da imagem e corta para ajustar */
+        }
+
+        .info {
+            margin-top: 5px;
+            color: #333;
+            font-size: 14px;
+        }
+
+        .image:hover {
+            transform: scale(1.1);
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            height: 25px; /* Reduz a altura do footer */
+            font-size: 15px; /* Reduz o tamanho da fonte */
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Portfolio - Mónica Jangada Campos</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="languageToggle">
+                            Language
+                        </a>
+                        <div id="languageOptions" class="dropdown-menu">
+                            <a class="dropdown-item" href="portfolio.html" data-lang="en">Portuguese</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="portfolio.ingles.html">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sobremim.ingles.html">About me</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <h1>Bird Photography portfolio</h1>
+    </header>
+
+    <div class="gallery">
+        <div class="image-container">
+            <div class="image">
+                <img src="imagem1.jpg" alt="Toutinegra-do-mato">
+            </div>
+            <div class="info">Dartford warbler  25-05-2023</div>
+        </div>
+        <div class="image-container">
+            <div class="image">
+                <img src="imagem2.jpg" alt="Fuinha-dos-juncos">
+            </div>
+            <div class="info">Zitting cisticola  09-08-2022</div>
+        </div>
+        <div class="image-container">
+            <div class="image">
+                <img src="imagem3.jpg" alt="Bispo-de-coroa-amarela">
+            </div>
+            <div class="info">Yellow crowned bishop  09-08-2022</div>
+        </div>
+        <div class="image-container">
+            <div class="image">
+                <img src="imagem4.jpg" alt="Abelharuco">
+            </div>
+            <div class="info">European bee eater  19-04-2024</div>
+        </div>
+        <div class="image-container">
+            <div class="image">
+                <img src="imagem5.jpg" alt="Chapim-real">
+            </div>
+            <div class="info">Great-tit  21-09-2023</div>
+        </div>
+        <div class="image-container">
+            <div class="image">
+                <img src="imagem6.jpg" alt="Trepadeira-comum">
+            </div>
+            <div class="info">Short toed treecreeper 31-01-2023</div>
+        </div>
+        <div class="image-container">
+            <div class="image">
+                <img src="imagem7.jpg" alt="Abelharuco">
+            </div>
+            <div class="info">European bee eater  19-04-2024</div>
+        </div>
+        <div class="image-container">
+            <div class="image">
+                <img src="imagem8.jpg" alt="Abelharuco">
+            </div>
+            <div class="info">European bee eater  25-04-2024</div>
+        </div>
+        <div class="image-container">
+            <div class="image">
+                <img src="imagem9.jpg" alt="Escrevadeira-das-rochas">
+            </div>
+            <div class="info">Rock bunting  03-06-2024</div>
+        </div>
+        <div class="image-container">
+            <div class="image">
+                <img src="imagem10.jpg" alt="Descrição da imagem 10">
+            </div>
+            <div class="info">Common snipe  14-03-2023</div>
+        </div>
+        <div class="image-container">
+            <div class="image">
+                <img src="imagem11.jpg" alt="Descrição da imagem 11">
+            </div>
+            <div class="info">Hirundo rustica  12-06-2024</div>
+        </div>
+        <div class="image-container">
+            <div class="image">
+                <img src="imagem12.jpg" alt="Descrição da imagem 12">
+            </div>
+            <div class="info">Common snipe  14-03-2023</div>
+        </div>
+        <div class="image-container">
+            <div class="image">
+                <img src="imagem13.jpg" alt="Descrição da imagem 13">
+            </div>
+            <div class="info">Little owl  07-04-2023</div>
+        </div>
+        <div class="image-container">
+            <div class="image">
+                <img src="imagem14.jpg" alt="Descrição da imagem 14">
+            </div>
+            <div class="info">European kingfisher  11-07-2024</div>
+        </div>
+        <div class="image-container">
+            <div class="image">
+                <img src="imagem15.jpg" alt="Descrição da imagem 15">
+            </div>
+            <div class="info">Blue rock thrush  13-04-2023</div>
+        </div>
+        <div class="image-container">
+            <div class="image">
+                <img src="imagem16.jpg" alt="Descrição da imagem 16">
+            </div>
+            <div class="info">European kingfisher  11-07-2024</div>
+        </div>
+        <div class="image-container">
+            <div class="image">
+                <img src="imagem17.jpg" alt="Descrição da imagem 17">
+            </div>
+            <div class="info">Common whitethroat  01-05-2023</div>
+        </div>
+        <div class="image-container">
+            <div class="image">
+                <img src="imagem18.jpg" alt="Descrição da imagem 18">
+            </div>
+            <div class="info">Hawfinch  25-03-2024</div>
+        </div>
+        <div class="image-container">
+            <div class="image">
+                <img src="imagem19.jpg" alt="Descrição da imagem 19">
+            </div>
+            <div class="info">Melodious  01-05-2023</div>
+        </div>
+        <div class="image-container">
+            <div class="image">
+                <img src="imagem20.jpg" alt="Descrição da imagem 20">
+            </div>
+            <div class="info">Eurasian golden oriole  29-06-2023</div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Mónica Jangada</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-TB/Kl1xK95G7YqTdrJA9HnlkIT0FvzxGx4u4fHlPYa9eVJIoFf40E9CerqFfIh5c" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-HmyJcH89Te/2YY1UprXEWtn6UqHq7SSkUVyioWKIE2Rsp1sY5XgYXPibznK8Ki8+" crossorigin="anonymous"></script>
+    <script>
+        document.getElementById('languageToggle').addEventListener('click', function() {
+            const dropdown = document.getElementById('languageOptions');
+            dropdown.classList.toggle('show');
+        });
+        
+        document.addEventListener('click', function(event) {
+            const target = event.target;
+            if (!target.closest('#languageToggle') && !target.closest('#languageOptions')) {
+                document.getElementById('languageOptions').classList.remove('show');
+            }
+        });
+    </script>
+</body>
+</html>
