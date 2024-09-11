@@ -12,58 +12,36 @@
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0 0 50px 0;
+            padding: 0;
             overflow-x: hidden;
         }
 
         .navbar {
             background-color: #333;
-            padding: 15px 0;
+            padding: 15px;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            transition: background-color 0.3s ease;
         }
 
         .navbar-brand {
             color: #fff;
-            font-size: 24px;
+            font-size: 1.5rem;
             font-weight: bold;
-            transition: color 0.3s ease;
         }
 
         .navbar-brand:hover {
             color: #ff4500;
         }
 
-        .navbar-toggler {
-            border: none;
-            outline: none;
-        }
-
-        .navbar-toggler-icon {
-            background-color: #fff;
-            border-radius: 2px;
-        }
-
-        .navbar-toggler:focus .navbar-toggler-icon {
-            box-shadow: 0 0 0 0.2rem rgba(255, 69, 0, 0.25);
-        }
-
         .navbar-nav {
             margin-left: auto;
         }
 
-        .nav-item {
-            margin-left: 20px;
-            position: relative;
-        }
-
         .nav-link {
             color: #fff;
-            font-size: 16px;
-            transition: color 0.3s ease;
+            font-size: 1rem;
         }
 
         .nav-link:hover {
@@ -71,33 +49,17 @@
         }
 
         .dropdown-menu {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
             background-color: #fff;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             width: 150px;
-            z-index: 1000;
-        }
-
-        .dropdown-menu.show {
-            display: block;
         }
 
         .dropdown-menu a {
             color: #333;
-            text-decoration: none;
-            padding: 10px;
         }
 
         .dropdown-menu a:hover {
             background-color: #f0f0f0;
-        }
-
-        .dropdown-toggle::after {
-            content: '▼';
-            margin-left: 5px;
         }
 
         header {
@@ -105,7 +67,7 @@
             background-color: #333;
             color: #fff;
             text-align: center;
-            padding: 20px 0;
+            padding: 20px;
         }
 
         .gallery {
@@ -117,8 +79,8 @@
         }
 
         .image-container {
-            width: auto;
-            height: auto;
+            width: 100%;
+            max-width: 300px;
             text-align: center;
         }
 
@@ -142,44 +104,26 @@
         }
 
         .image:hover {
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
 
         footer {
             background-color: #333;
             color: #fff;
             text-align: center;
-            padding: 10px 0;
+            padding: 10px;
             margin: 0;
             width: 100%;
-            position: fixed;
-            bottom: 0;
-            height: auto;
-            font-size: 15px;
         }
 
         /* Ajustes para dispositivos móveis e tablets */
         @media (max-width: 768px) {
             .navbar-brand {
-                font-size: 20px;
-            }
-
-            .navbar-nav {
-                margin-left: 0;
-                text-align: center;
-            }
-
-            .nav-item {
-                margin: 0;
-                padding: 10px 0;
+                font-size: 1.25rem;
             }
 
             .nav-link {
-                font-size: 14px;
-            }
-
-            .dropdown-menu {
-                width: 100%;
+                font-size: 0.875rem;
             }
 
             .gallery {
@@ -189,22 +133,24 @@
 
             .image-container {
                 width: 100%;
+                max-width: 100%;
                 margin-bottom: 10px;
             }
 
             footer {
-                font-size: 12px;
+                font-size: 0.875rem;
+                padding: 5px;
             }
         }
 
         /* Ajustes para telas muito pequenas */
         @media (max-width: 480px) {
             .navbar-brand {
-                font-size: 18px;
+                font-size: 1.125rem;
             }
 
             .nav-link {
-                font-size: 12px;
+                font-size: 0.75rem;
             }
 
             .gallery {
@@ -212,12 +158,12 @@
             }
 
             .image-container {
-                margin-bottom: 10px;
+                margin-bottom: 5px;
             }
 
             footer {
-                font-size: 10px;
-                padding: 5px 0;
+                font-size: 0.75rem;
+                padding: 5px;
             }
         }
     </style>
@@ -312,67 +258,67 @@
         </div>
         <div class="image-container">
             <div class="image">
-                <img src="imagem10.jpg" alt="Descrição da imagem 10">
+                <img src="imagem10.jpg" alt="Narceja">
             </div>
             <div class="info">Narceja  14-03-2023</div>
         </div>
         <div class="image-container">
             <div class="image">
-                <img src="imagem11.jpg" alt="Descrição da imagem 11">
+                <img src="imagem11.jpg" alt="Andorinha-das-chaminés">
             </div>
             <div class="info">Andorinha-das-chaminés  12-06-2024</div>
         </div>
         <div class="image-container">
             <div class="image">
-                <img src="imagem12.jpg" alt="Descrição da imagem 12">
+                <img src="imagem12.jpg" alt="Cuco-canoro">
             </div>
             <div class="info">Cuco-canoro  14-03-2023</div>
         </div>
         <div class="image-container">
             <div class="image">
-                <img src="imagem13.jpg" alt="Descrição da imagem 13">
+                <img src="imagem13.jpg" alt="Mocho-galego">
             </div>
             <div class="info">Mocho-galego  07-04-2023</div>
         </div>
         <div class="image-container">
             <div class="image">
-                <img src="imagem14.jpg" alt="Descrição da imagem 14">
+                <img src="imagem14.jpg" alt="Guarda-rios">
             </div>
             <div class="info">Guarda-rios  11-07-2024</div>
         </div>
         <div class="image-container">
             <div class="image">
-                <img src="imagem15.jpg" alt="Descrição da imagem 15">
+                <img src="imagem15.jpg" alt="Melro-azul">
             </div>
             <div class="info">Melro-azul  13-04-2023</div>
         </div>
         <div class="image-container">
             <div class="image">
-                <img src="imagem16.jpg" alt="Descrição da imagem 16">
+                <img src="imagem16.jpg" alt="Guarda-rios">
             </div>
             <div class="info">Guarda-rios  11-07-2024</div>
         </div>
         <div class="image-container">
             <div class="image">
-                <img src="imagem17.jpg" alt="Descrição da imagem 17">
+                <img src="imagem17.jpg" alt="Papa-amoras">
             </div>
             <div class="info">Papa-amoras  01-05-2023</div>
         </div>
         <div class="image-container">
             <div class="image">
-                <img src="imagem18.jpg" alt="Descrição da imagem 18">
+                <img src="imagem18.jpg" alt="Bico-grossudo">
             </div>
             <div class="info">Bico-grossudo  25-03-2024</div>
         </div>
         <div class="image-container">
             <div class="image">
-                <img src="imagem19.jpg" alt="Descrição da imagem 19">
+                <img src="imagem19.jpg" alt="Felosa-poliglota">
             </div>
             <div class="info">Felosa-poliglota  01-05-2023</div>
         </div>
         <div class="image-container">
             <div class="image">
-                <img src="imagem20.jpg" alt="Descrição da imagem 20">
+                <img src="imagem20.jpg" alt="Papa-figos">
             </div>
             <div class="info">Papa-figos  29-06-2023</div>
         </div>
