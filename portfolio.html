@@ -57,7 +57,7 @@
 
         .nav-item {
             margin-left: 20px;
-            position: relative; /* Necessário para posicionar o menu suspenso */
+            position: relative;
         }
 
         .nav-link {
@@ -71,14 +71,14 @@
         }
 
         .dropdown-menu {
-            display: none; /* Inicialmente escondido */
+            display: none;
             position: absolute;
-            top: 100%; /* Posiciona o menu abaixo do item */
+            top: 100%;
             left: 0;
             background-color: #fff;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 150px; /* Largura do menu */
-            z-index: 1000; /* Garante que o menu esteja acima de outros elementos */
+            width: 150px;
+            z-index: 1000;
         }
 
         .dropdown-menu.show {
@@ -88,6 +88,7 @@
         .dropdown-menu a {
             color: #333;
             text-decoration: none;
+            padding: 10px;
         }
 
         .dropdown-menu a:hover {
@@ -95,12 +96,12 @@
         }
 
         .dropdown-toggle::after {
-            content: '▼'; /* Adiciona uma seta para baixo */
+            content: '▼';
             margin-left: 5px;
         }
 
         header {
-            margin-top: 70px; /* Espaço para a navbar */
+            margin-top: 70px;
             background-color: #333;
             color: #fff;
             text-align: center;
@@ -111,14 +112,14 @@
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
-            justify-content: center; /* Centraliza as imagens horizontalmente */
+            justify-content: center;
             padding: 20px;
         }
 
         .image-container {
-            width: auto; /* Largura automática */
-            height: 420px; /* Altura fixa para todas as imagens e descrição */
-            text-align: center; /* Centraliza a descrição abaixo da imagem */
+            width: auto;
+            height: auto;
+            text-align: center;
         }
 
         .image {
@@ -126,13 +127,12 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease-in-out;
-            height: 400px; /* Altura fixa para todas as imagens */
         }
 
         .image img {
             width: 100%;
-            height: 100%; /* Ajusta a altura da imagem para preencher o contêiner */
-            object-fit: cover; /* Mantém a proporção da imagem e corta para ajustar */
+            height: auto;
+            object-fit: cover;
         }
 
         .info {
@@ -149,13 +149,76 @@
             background-color: #333;
             color: #fff;
             text-align: center;
-            padding: 0;
+            padding: 10px 0;
             margin: 0;
             width: 100%;
             position: fixed;
             bottom: 0;
-            height: 25px; /* Reduz a altura do footer */
-            font-size: 15px; /* Reduz o tamanho da fonte */
+            height: auto;
+            font-size: 15px;
+        }
+
+        /* Ajustes para dispositivos móveis e tablets */
+        @media (max-width: 768px) {
+            .navbar-brand {
+                font-size: 20px;
+            }
+
+            .navbar-nav {
+                margin-left: 0;
+                text-align: center;
+            }
+
+            .nav-item {
+                margin: 0;
+                padding: 10px 0;
+            }
+
+            .nav-link {
+                font-size: 14px;
+            }
+
+            .dropdown-menu {
+                width: 100%;
+            }
+
+            .gallery {
+                padding: 10px;
+                flex-direction: column;
+            }
+
+            .image-container {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            footer {
+                font-size: 12px;
+            }
+        }
+
+        /* Ajustes para telas muito pequenas */
+        @media (max-width: 480px) {
+            .navbar-brand {
+                font-size: 18px;
+            }
+
+            .nav-link {
+                font-size: 12px;
+            }
+
+            .gallery {
+                padding: 5px;
+            }
+
+            .image-container {
+                margin-bottom: 10px;
+            }
+
+            footer {
+                font-size: 10px;
+                padding: 5px 0;
+            }
         }
     </style>
 </head>
